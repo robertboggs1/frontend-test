@@ -1,0 +1,113 @@
+.form {
+    &--field-row {
+        display:flex;
+        gap:10px;
+        margin-bottom:10px;
+    }
+    &--field {
+        flex-shrink:1;
+        flex-grow:1;
+        &__label {
+            display:none;
+        }
+        .field-instruction {
+            color:$gray;
+            margin-top:5px;
+            display:block;
+        }
+        input, select {
+            width:100%;
+            padding:15px 12px;
+            border:solid 1px #c9d2d8;
+            border-radius:3px;
+            color:$gray-dk;
+            display:block;
+            
+            &::placeholder {
+                color:$gray;
+            }
+        }
+        input {
+            
+            &[type='text'], &[type='email'] {
+                
+
+            }
+        }
+        select {
+            // appearance:none;
+        }
+    }
+    .payment-opt {
+        width:100%;
+        margin-bottom:10px;
+        overflow:hidden;
+        input {
+            position:absolute;
+            top:-99999px; left:-99999px;
+        }
+        &--radio {
+            display:block;
+            padding:20px;
+            border-radius:3px;
+            width:100%;
+            display:flex;
+            align-items: center;
+            gap:15px;
+            border:solid 2px #f8f8f8;
+            background-color:#f8f8f8;
+            &::before {
+                content:'';
+                display:inline-block;
+                border:solid 2px $gray;
+                height:20px; width:20px;
+                border-radius:50%;
+
+                font-family: "Font Awesome 5 Free"; 
+                font-weight: 900; 
+                display: inline-block;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                text-align:center;
+                line-height:15px;
+            }
+        }
+        input:checked + .payment-opt--radio {
+            border-color:$orange;
+            background-color:#fff;
+        }
+        input:checked + .payment-opt--radio::before {
+            content:'\f00c';
+            color:#fff;
+            border-color:$orange;
+            background-color:$orange;
+        }
+        input:focus + .payment-opt--radio {
+            border-color:$gray-dk;
+        }
+    }
+    &--order-summary {
+        .form-field {
+            margin-bottom:10px;
+        }
+    }
+    &--order-total {
+        margin-top:20px;
+        h3 {
+            display:flex;
+            justify-content: space-between;
+        }
+        &__amt {
+            color:$gray-dk;
+            font-weight:bold;
+        }
+    }
+
+    &--promotion-card {
+        &__content {
+            p {
+                color:$gray-lt;
+            }
+        }
+    }
+}

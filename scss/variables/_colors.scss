@@ -1,0 +1,26 @@
+$white:#fff;
+$orange:#f17e00;
+$orange-lt:#f59328;
+$purple:#5c135c;
+$purple-lt:#800080;
+$gray:#838a8f;
+$gray-lt:#f0f2f3;
+$gray-dk:#2e3840;
+
+@mixin bg-grad($start-value, $stop-value) {
+    background: #{$start-value}; /* Old browsers */
+    background: -moz-linear-gradient(left,  #{$start-value} 0%, #{$stop-value} 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #{$start-value} 0%,#{$stop-value} 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #{$start-value} 0%,#{$stop-value} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start-value}', endColorstr='#{stop-value}',GradientType=1 ); /* IE6-9 */
+}
+@mixin bg-grad-class($color, $start-value, $stop-value) {
+    .bg-grad--#{$color} {
+        @include bg-grad(#{$start-value}, #{$stop-value});
+    }
+}
+
+
+@include bg-grad-class('purple', $purple, $purple-lt);
+@include bg-grad-class('orange', $orange, $orange-lt);
+

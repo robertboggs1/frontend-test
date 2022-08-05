@@ -1,0 +1,42 @@
+.btn {
+    color:$white;
+    font-size:15px;
+    padding:10px 25px;
+    border-radius:20px;
+    position:relative;
+    @include bg-grad($orange, $orange-lt); 
+    &--lg {
+        font-size:20px;
+        border-radius:36px;
+        padding:18px 60px;
+        font-weight:bold;
+        box-shadow:10px 10px 15px -5px rgba(0,0,0,.2);
+    }
+    &--fw {
+        width:100%;
+    }
+    &--arrow {
+        padding-right:80px;
+        &::after {
+            content:'\f061';
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900; 
+            display: inline-block;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-size:20px;
+            line-height:50px;
+            text-align: center;
+            vertical-align: middle;
+            height:50px; width:50px;
+            background:rgba(0,0,0,.15);
+            border-radius:50%;
+            position:absolute;
+            right:8px; top:50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+a:not(.btn) {
+    color:$orange;
+}

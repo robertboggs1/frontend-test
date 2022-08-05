@@ -1,0 +1,19 @@
+@mixin card-color($color, $start-value, $stop-value, $txt-color) {
+    &--#{$color} {
+        @if $start-value == $stop-value {
+            background-color:$start-value;
+        }
+        @else {
+            @include bg-grad(#{$start-value}, #{$stop-value});
+        }
+        color:#{$txt-color};
+    }
+}
+.card {
+    background-color:$gray-lt;
+    border-radius:6px;
+    border-width:0;
+    padding:1em;
+    margin-bottom:10px;
+    @include card-color('purple', $purple, $purple-lt, $white);
+}

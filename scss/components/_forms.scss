@@ -1,4 +1,7 @@
 .form {
+    &--field-column {
+        margin-bottom:2em;
+    }
     &--field-row {
         display:flex;
         gap:10px;

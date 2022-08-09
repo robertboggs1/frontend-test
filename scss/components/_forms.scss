@@ -34,6 +34,11 @@
 
             }
         }
+        .form-select {
+            color:$gray;
+            font-size: $fs-body;
+            padding-right:2.5em;
+        }
         select {
             // appearance:none;
         }
